@@ -6,7 +6,11 @@ class DailyTasksController < ApplicationController
   # GET /daily_tasks
   # GET /daily_tasks.json
   def index
-    @daily_tasks = @user.daily_tasks.order(date: :desc)
+    if params[:show_tasks] == 'today'
+      @daily_tasks = @user.daily_tasks.where(date: Date.today).order(date: :desc)
+    else
+      @daily_tasks = @user.daily_tasks.order(date: :desc)
+    end
   end
 
   # GET /daily_tasks/1
