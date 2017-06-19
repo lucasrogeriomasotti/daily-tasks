@@ -6,7 +6,7 @@ class DailyTasksController < ApplicationController
   # GET /daily_tasks
   # GET /daily_tasks.json
   def index
-    @daily_tasks = @user.daily_tasks
+    @daily_tasks = @user.daily_tasks.order(date: :desc)
   end
 
   # GET /daily_tasks/1
