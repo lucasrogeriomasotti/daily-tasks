@@ -35,5 +35,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'simple_form'
 gem 'rails-i18n', '~> 5.0.0'
+gem 'mysql2'
 
 ruby '2.3.3'
