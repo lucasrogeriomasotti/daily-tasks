@@ -6,11 +6,14 @@ class DailyTasksController < ApplicationController
   # GET /daily_tasks
   # GET /daily_tasks.json
   def index
+    @today_tasks = @user.daily_tasks.where(date: Date.today).order(date: :desc)
     if params[:show_tasks] == 'today'
-      @daily_tasks = @user.daily_tasks.where(date: Date.today).order(date: :desc)
+      @daily_tasks = @today_tasks
     else
       @daily_tasks = @user.daily_tasks.order(date: :desc)
     end
+    
+    @today_tasks_time = get_today_tasks_time @today_tasks
   end
 
   # GET /daily_tasks/1
@@ -81,5 +84,13 @@ class DailyTasksController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def daily_task_params
       params.require(:daily_task).permit(:name, :duration, :date)
+    end
+    
+    def get_today_tasks_time tasks
+      time = 0
+      tasks.each do |task|
+        time += task.duration
+      end
+      return time
     end
 end
