@@ -37,4 +37,4 @@ gem 'simple_form'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'mysql2'
 
-ruby '2.3.3'
+ruby '2.4.1'
