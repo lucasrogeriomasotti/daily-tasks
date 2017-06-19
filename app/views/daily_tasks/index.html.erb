@@ -17,7 +17,7 @@
       <tr>
         <td><%= daily_task.name %></td>
         <td><%= daily_task.duration %></td>
-        <td><%= daily_task.date %></td>
+        <td><%= l daily_task.date  %></td>
         <td><%= daily_task.user %></td>
         <td class="actions-td">
           <%= link_to 'Show', daily_task, class: 'btn btn-primary' %>
