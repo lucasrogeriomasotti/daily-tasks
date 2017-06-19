@@ -38,7 +38,7 @@ class DailyTasksController < ApplicationController
 
     respond_to do |format|
       if @daily_task.save
-        format.html { redirect_to @daily_task, notice: 'Daily task was successfully created.' }
+        format.html { redirect_to daily_tasks_path, notice: 'Daily task was successfully created.' }
         format.json { render :show, status: :created, location: @daily_task }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class DailyTasksController < ApplicationController
   def update
     respond_to do |format|
       if @daily_task.update(daily_task_params)
-        format.html { redirect_to @daily_task, notice: 'Daily task was successfully updated.' }
+        format.html { redirect_to daily_tasks_path, notice: 'Daily task was successfully updated.' }
         format.json { render :show, status: :ok, location: @daily_task }
       else
         format.html { render :edit }
