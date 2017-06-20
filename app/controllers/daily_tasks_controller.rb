@@ -83,7 +83,7 @@ class DailyTasksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def daily_task_params
-      params.require(:daily_task).permit(:name, :duration, :date)
+      params.require(:daily_task).permit(:name, :duration, :date, :description)
     end
     
     def get_today_tasks_time tasks

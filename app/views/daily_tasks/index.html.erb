@@ -5,6 +5,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Description</th>
       <th>Duration</th>
       <th>Date</th>
       <th colspan="3"></th>
@@ -15,6 +16,7 @@
     <% @daily_tasks.each do |daily_task| %>
       <tr>
         <td><%= daily_task.name %></td>
+        <%= content_tag(:td, truncate(daily_task.description, length: 65), title: daily_task.description) %>
         <td><%= daily_task.duration %></td>
         <td><%= l daily_task.date  %></td>
         <td class="actions-td">
