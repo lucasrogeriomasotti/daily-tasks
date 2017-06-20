@@ -24,6 +24,7 @@ class DailyTasksController < ApplicationController
   # GET /daily_tasks/new
   def new
     @daily_task = DailyTask.new
+    @daily_task.date = Date.current
   end
 
   # GET /daily_tasks/1/edit
