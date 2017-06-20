@@ -30,11 +30,14 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+group :production, :postgresql do
+  gem 'pg'
+end
+
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'simple_form'
 gem 'rails-i18n', '~> 5.0.0'
-gem 'mysql2'
 
 ruby '2.4.1'
