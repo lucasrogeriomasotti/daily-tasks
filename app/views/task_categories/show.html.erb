@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @task_category.name %>
+</p>
+
+<p>
+  <strong>Reference url:</strong>
+  <%= @task_category.reference_url %>
+</p>
+
+<%= link_to 'Edit', edit_task_category_path(@task_category) %> |
+<%= link_to 'Back', task_categories_path %>

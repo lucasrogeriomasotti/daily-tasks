@@ -1,0 +1,29 @@
+<h1 class="page-header">Task Categories</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Reference url</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_categories.each do |task_category| %>
+      <tr>
+        <td><%= task_category.name %></td>
+        <td><%= task_category.reference_url %></td>
+        <td class="actions-td">
+          <%= link_to 'Show', task_category, class: 'btn btn-primary' %>
+          <%= link_to 'Edit', edit_task_category_path(task_category), class: 'btn btn-primary' %>
+          <%= link_to 'Destroy', task_category, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task Category', new_task_category_path, class: 'btn btn-primary' %>

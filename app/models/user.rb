@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :daily_tasks
+  has_many :task_categories
+  has_many :tasks
   
   def to_s
     self.email

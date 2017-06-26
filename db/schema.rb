@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170620133120) do
+ActiveRecord::Schema.define(version: 20170626180038) do
 
   create_table "daily_tasks", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,26 @@ ActiveRecord::Schema.define(version: 20170620133120) do
     t.datetime "updated_at", null: false
     t.text "description"
     t.index ["user_id"], name: "index_daily_tasks_on_user_id"
+  end
+
+  create_table "task_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "reference_url"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_task_categories_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "task_category_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_category_id"], name: "index_tasks_on_task_category_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

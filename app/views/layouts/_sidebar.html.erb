@@ -1,5 +1,7 @@
 <div class="col-sm-3 col-md-2 sidebar">
   <ul class="nav nav-sidebar">
     <%= content_tag(:li, (link_to 'My daily tasks', :daily_tasks), class: nav_sidebar_item_class(:daily_tasks, params[:controller])) %>
+    <%= content_tag(:li, (link_to 'Tasks', :tasks), class: nav_sidebar_item_class(:tasks, params[:controller])) %>
+    <%= content_tag(:li, (link_to 'Task Categories', :task_categories), class: nav_sidebar_item_class(:task_categories, params[:controller])) %>
   </ul>
 </div>
