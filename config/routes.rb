@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :tasks
   resources :task_categories
-  resources :daily_tasks
+  resources :task_logs
  
   devise_for :users, controllers: {
       registrations: 'users/registrations'

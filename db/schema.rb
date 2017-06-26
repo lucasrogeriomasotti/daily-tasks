@@ -10,18 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170626180038) do
-
-  create_table "daily_tasks", force: :cascade do |t|
-    t.string "name"
-    t.integer "duration"
-    t.date "date"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text "description"
-    t.index ["user_id"], name: "index_daily_tasks_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 20170626184305) do
 
   create_table "task_categories", force: :cascade do |t|
     t.string "name"
@@ -30,6 +19,17 @@ ActiveRecord::Schema.define(version: 20170626180038) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_task_categories_on_user_id"
+  end
+
+  create_table "task_logs", force: :cascade do |t|
+    t.string "name"
+    t.integer "duration"
+    t.date "date"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "description"
+    t.index ["user_id"], name: "index_task_logs_on_user_id"
   end
 
   create_table "tasks", force: :cascade do |t|

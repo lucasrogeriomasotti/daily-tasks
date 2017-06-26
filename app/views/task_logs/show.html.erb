@@ -1,0 +1,17 @@
+<p>
+  <strong>Name:</strong>
+  <%= @task_log.name %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @task_log.duration %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @task_log.date %>
+</p>
+
+<%= link_to 'Edit', edit_task_log_path(@task_log) %> |
+<%= link_to 'Back', task_logs_path %>

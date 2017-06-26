@@ -1,4 +1,4 @@
-class DailyTask < ApplicationRecord
+class TaskLog < ApplicationRecord
   belongs_to :user
   
   validates_presence_of :user

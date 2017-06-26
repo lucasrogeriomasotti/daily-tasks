@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :daily_tasks
+  has_many :task_logs
   has_many :task_categories
   has_many :tasks
   
