@@ -84,13 +84,13 @@ class TaskLogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_log_params
-      params.require(:task_log).permit(:name, :duration, :date, :description)
+      params.require(:task_log).permit(:name, :duration, :date, :description, :task_id)
     end
     
     def get_today_tasks_time tasks
       time = 0
       tasks.each do |task|
-        time += task.duration
+        time += task.duration if task.duration.present?
       end
       return time
     end

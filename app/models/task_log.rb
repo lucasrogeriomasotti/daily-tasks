@@ -1,8 +1,6 @@
 class TaskLog < ApplicationRecord
   belongs_to :user
+  belongs_to :task, optional: true
   
-  validates_presence_of :user
-  validates_presence_of :name
-  validates_presence_of :duration
   validates_presence_of :date
 end
