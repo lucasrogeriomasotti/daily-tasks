@@ -1,4 +1,9 @@
 <p>
+  <strong>Task category:</strong>
+  <%= @task.task_category %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @task.name %>
 </p>
@@ -6,11 +11,6 @@
 <p>
   <strong>Description:</strong>
   <%= @task.description %>
-</p>
-
-<p>
-  <strong>Task category:</strong>
-  <%= @task.task_category %>
 </p>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |

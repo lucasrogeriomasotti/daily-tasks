@@ -1,6 +1,16 @@
 <p>
+  <strong>Task:</strong>
+  <%= @task_log.task %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @task_log.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task_log.description %>
 </p>
 
 <p>
@@ -10,7 +20,7 @@
 
 <p>
   <strong>Date:</strong>
-  <%= @task_log.date %>
+  <%= l @task_log.date %>
 </p>
 
 <%= link_to 'Edit', edit_task_log_path(@task_log) %> |

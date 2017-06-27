@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :task %>
+    <%= f.association :task, label_method: :to_s %>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :duration %>

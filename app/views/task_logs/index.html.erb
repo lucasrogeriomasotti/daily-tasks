@@ -16,7 +16,7 @@
   <tbody>
     <% @task_logs.each do |task_log| %>
       <tr>
-        <td><%= task_log.task %></td>
+        <td><%= link_to(task_log.task, task_path(task_log.task)) if task_log.task.present? %></td>
         <td><%= task_log.name %></td>
         <%= content_tag(:td, truncate(task_log.description, length: 65), title: task_log.description) %>
         <td><%= task_log.duration %></td>

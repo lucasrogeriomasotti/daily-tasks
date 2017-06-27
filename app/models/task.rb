@@ -6,6 +6,7 @@ class Task < ApplicationRecord
   validates_presence_of :name
   
   def to_s
-    "#{self.name} - #{self.description}"
+    return "#{self.name} - #{self.description}" if self.description.present?
+    return self.name
   end
 end
