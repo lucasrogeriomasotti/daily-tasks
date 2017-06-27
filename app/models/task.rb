@@ -6,6 +6,6 @@ class Task < ApplicationRecord
   validates_presence_of :name
   
   def to_s
-    "#{self.task_category} - #{self.name}"
+    "#{self.name} - #{self.description}"
   end
 end
