@@ -57,17 +57,21 @@ class TaskCategoriesController < ApplicationController
   # DELETE /task_categories/1
   # DELETE /task_categories/1.json
   def destroy
-    @task_category.destroy
     respond_to do |format|
-      format.html { redirect_to task_categories_url, notice: 'Task category was successfully destroyed.' }
-      format.json { head :no_content }
+      if @task_category.destroy
+        format.html { redirect_to task_categories_url, notice: 'Task category was successfully destroyed.' }
+        format.json { head :no_content }
+      else
+        format.html { redirect_to task_categories_url, alert: 'Task category was not successfully destroyed. Error message: ' + @task_category.errors.full_messages.first }
+        format.json { render json: @task_category.errors, status: :unprocessable_entity }
+      end
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_task_category
-      @task_category = TaskCategory.find(params[:id])
+      @task_category = TaskCategory.where(id: params[:id], user: @user).take!
     end
     
     def set_user
