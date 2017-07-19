@@ -16,9 +16,9 @@
   <tbody>
     <% @task_logs.each do |task_log| %>
       <tr>
-        <td><%= task_log.task.category_reference_url %></td>
+        <td><%= link_to task_log.task, task_log.task.category_reference_url, target: '_blank' %></td>
         <td><%= task_log.name %></td>
-        <%= content_tag(:td, truncate(task_log.description, length: 65), title: task_log.description) %>
+        <%= content_tag(:td, truncate(task_log.description, length: 8), title: task_log.description) %>
         <td><%= task_log.duration %></td>
         <td><%= l task_log.date  %></td>
         <td class="actions-td">
