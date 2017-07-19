@@ -23,12 +23,14 @@ class TaskLogsController < ApplicationController
 
   # GET /task_log/new
   def new
+    @tasks = Task.order(:name)
     @task_log = TaskLog.new
     @task_log.date = Date.current
   end
 
   # GET /task_log/1/edit
   def edit
+    @tasks = Task.order(:name)
   end
 
   # POST /task_log
