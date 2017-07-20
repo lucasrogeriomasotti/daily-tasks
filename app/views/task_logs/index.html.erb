@@ -16,7 +16,7 @@
   <tbody>
     <% @task_logs.each do |task_log| %>
       <tr>
-        <td><%= link_to truncate(task_log.task.to_s, length: 58), task_log.task.category_reference_url, target: '_blank' %></td>
+        <td><%= link_to truncate(task_log.task.to_s, length: 58), task_log.url, target: '_blank' %></td>
         <td><%= task_log.name %></td>
         <%= content_tag(:td, truncate(task_log.description, length: 8), title: task_log.description) %>
         <td><%= task_log.duration %></td>
